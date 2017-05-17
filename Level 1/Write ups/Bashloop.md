@@ -1,4 +1,4 @@
-##Bash Loop
+<h1>Bash Loop</h1>
 **We found a program that is hiding a flag but requires you to guess the number it is thinking of. Chances are Linux has an easy way to try all the numbers... Go to /problems/f625672abc185c8d615f852c306d877f and try it out!**
 
 >Hints:

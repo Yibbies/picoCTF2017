@@ -1,4 +1,4 @@
-##MASTER CHALLENGE (Lazy Dev)
+<h1>MASTER CHALLENGE (Lazy Dev)</h1>
 **I really need to login to this website, but the developer hasn't implemented login yet. Can you help?**
 
 >Hints:
@@ -6,7 +6,7 @@
 >- Where does the password check actually occur?
 >- Can you interact with the javascript directly?
 
-Open the website. Just a password form and submit button. Without a means to enter a username, we can just skip over trying to brute force the password. In an attempt to see what this password page is meant to be used for we can inspect it's structure. We do this by opening the context menu and selecting "inspect".
+Open the website. Just a password form with a submit button. Without a means to enter a username, we can just skip over trying to brute force the password (if this challenge was not for beginners, we could not make this assumption and in the real world this set up could have some very serious implications). In an attempt to see what this password page is meant to be used for we can inspect it's structure. We do this by opening the context menu and selecting "inspect".
 
 Here we see the structure of the web form. We can see that the submit button has a function associated with it for when it is clicked. 
 

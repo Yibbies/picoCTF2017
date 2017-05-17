@@ -1,4 +1,4 @@
-##computeAES
+<h1>computeAES</h1>
 **You found this clue laying around. Can you decrypt it?**
 >Encrypted with AES in ECB mode. All values base64 encoded
 ciphertext = t1h0qbcOhRQF5E46bsNLimfbcI6egrKP4LHtKR3lT4UdWjhssM8RQSBT7S/8rcRy
@@ -19,7 +19,7 @@ ciphertext = ·Xt©·…äN:nÃKŠgÛpŽž‚²à±í)åO…Z8l°ÏA Sí
 key = O›•Í‹nÛú¿è†ÉUã
 ```
 
-Since the hint told us to try using python as well, chances are is that the decoded data should be stored as binary to retain information and avoid conflicts with compatibility. Luckily, the same base64 decodign website can export the results as a binary(.bin) file.
+Since the hint told us to try using python as well, chances are the decoded data should be stored as binary to retain information and avoid conflicts with compatibility. Luckily, the same base64 decoding website can export the results as a binary(.bin) file.
 
 Next step is to decrypt the decoded data. We're told the encryption is AES in ECB mode. Again, online tools (http://aes.online-domain-tools.com/) can be used. The cipher text can be uploaded directly. However the key needs to be in plain text or hex. Easiest route here is to convert to hex, since we originally made a binary file to avoid conflicts made by using plain text.
 

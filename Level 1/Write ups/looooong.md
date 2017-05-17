@@ -1,4 +1,4 @@
-##looooong
+<h1>looooong</h1>
 **I heard you have some "delusions of grandeur" about your typing speed. How fast can you go at shell2017.picoctf.com:51091?**
 >Hints:
 >
@@ -19,6 +19,8 @@ Please give me the 'Y' character '776' times, followed by a single '4'.
 To make things interesting, you have 30 seconds.
 Input:
 ```
+No way we can type this out reliably. Maybe we can get something different by refreshing the connection.
+
 Connecting again gives us:
 
 ```
@@ -27,7 +29,7 @@ Please give me the 'D' character '564' times, followed by a single '7'.
 To make things interesting, you have 30 seconds.
 Input:
 ```
-So here we can see that format is the same, but the character to use and quantity changes. We can use a python program to parse the text and output the answer for us quickly:
+So here we can see that format is the same, but the character to use and quantity changes. Sure, we can try to do this...but effort. Instead, we can use a python program to parse the text and output the answer for us quickly:
 
 ```python
 import sys
@@ -46,11 +48,11 @@ x.connect(("shell2017.picoctf.com", portnumber))
 a = re.findall(r"'(.*?)'", x.recv(4096))
 
 #Extracting the letter + number + ending
-b = a[0]
-c = int(a[1])
-d = a[2]
+b = a[0] 			#letter
+c = int(a[1])		#letter quantity
+d = a[2]			#ending value
 
-#constructing payload
+#constructing the payload
 payload = b * c
 payload += d
 payload += "\n"
@@ -58,6 +60,9 @@ payload += "\n"
 x.send(payload)
 sys.stdout.flush()
 print(x.recv(4096))
+
+#Source:https://github.com/Idomin/CTF-Writeups/blob/master/PicoCTF-2017/
+#           looooong
 ```
 
 Running the python program gives us our flag:

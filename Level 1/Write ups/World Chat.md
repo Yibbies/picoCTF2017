@@ -1,11 +1,11 @@
-##WorldChat
+<h1>WorldChat</h1>
 **We think someone is trying to transmit a flag over WorldChat. Unfortunately, there are so many other people talking that we can't really keep track of what is going on! Go see if you can find the messenger at shell2017.picoctf.com:38798. Remember to use Ctrl-C to cut the connection if it overwhelms you!**
 
 >Hints:
 >
 >There are cool command line tools that can filter out lines with specific keywords in them. Check out 'grep'! You can use the '|' character to put all the output into another process or command (like the grep process)
 
-We're given an address and a port. Easiest way to connect is to use the tool netcat. Connect using the following command:
+We're given an address and a port. Easiest way to connect is to use the netcat tool. Connect using the following command:
 
 ```bash
 nc shell2017.picoctf.com 38798

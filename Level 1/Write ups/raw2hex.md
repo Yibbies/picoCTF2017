@@ -1,4 +1,4 @@
-##Raw2Hex
+<h1>Raw2Hex</h1>
 **This program just prints a flag in raw form. All we need to do is convert the output to hex and we have it! CLI yourself to /problems/7ed72aec10a93d978ec3542055975d36 and turn that Raw2Hex!**
 
 >Hints:
@@ -19,7 +19,7 @@ We see two files: flag and raw2hex. With world permissions we cannot do anything
 The flag is:#:3?0R??_?$??SR
 ```
 
-Given the name of the challenge and the executable, it would be safe to assume that we cannot simply copy and paste the garbage flag text into the answer, so we should convert this to hex. This can be achieved by using the xxd tool. To do this, we pipe the output of the executable into xxd and obtain the hex value of the output:
+Given the name of the challenge and the executable, it would be safe to assume that we cannot simply copy and paste the garbage flag text as the answer, so we should convert this to hex. This can be achieved by using the xxd tool. To do this, we pipe the output of the executable into xxd and obtain the hex value of the output:
 
 ```bash
 # -p: output in postscript plain hexdump style.

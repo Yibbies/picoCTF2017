@@ -1,4 +1,4 @@
-##Hash101
+<h1>Hash101</h1>
 **Prove your knowledge of hashes and claim a flag as your prize! Connect to the service at shell2017.picoctf.com:17428
 UPDATED 16:12 EST 1 Apr.**
 
