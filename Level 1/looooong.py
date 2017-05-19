@@ -15,7 +15,7 @@ a = re.findall(r"'(.*?)'", x.recv(4096))
 
 #Extracting the letter + number + ending
 b = a[0] 			#letter
-c = int(a[1])		#letter quantity
+c = int(a[1])			#letter quantity
 d = a[2]			#ending value
 
 #constructing the payload
@@ -27,5 +27,4 @@ x.send(payload)
 sys.stdout.flush()
 print(x.recv(4096))
 
-#Source:https://github.com/Idomin/CTF-Writeups/blob/master/PicoCTF-2017/
-#           looooong
+#Source:https://github.com/Idomin/CTF-Writeups/blob/master/PicoCTF-2017/looooong
