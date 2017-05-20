@@ -31,6 +31,7 @@ good:
 end:
     ret
 ```
+In order to pass this challenge, we need the program to return 1. For this to happen we need the value of 'a' to 1 before the program ends. We cannot simply set it to 1 ourselves because it is overwritten to 0 by the program. However, we can see that it will also set the value of 'a' to 1 if we are able to all the function 'good', so this will be our goal.
 
 Translating the code into something a bit more readable gives us:
 
@@ -58,7 +59,7 @@ good
 end
 	return
 ```
-After converting 0x7ee0 from hexadecimal to decimal to get 32480. We can see the goal here is to set a so that the while loop repeats enough times for b to equal 32,480. Since b increases by the value of c, we conclude that the loop needs to repeat 6496 times. Converting 6496 to hex gives us a value of 1960. Thus our flag is:
+After converting 0x7ee0 from hexadecimal to decimal to get 32480. We can see in order to achieve our goal, we need to set the value of 'a' so that the while loop repeats enough times for 'b' to equal 32,480. Since 'b' increases by the value of 'c', we conclude that the loop needs to repeat 6496 times. Converting 6496 to hex gives us a value of 1960. Thus our flag is:
 
 ```
 0x1960
