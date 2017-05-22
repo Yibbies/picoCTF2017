@@ -52,6 +52,6 @@ unzip file
 
 We get our flag.png image:
 
-![](../../resources/Missing\ Identity\ Flag.png)
+![](../../resources/78537ff403ff488f5f8edc21bc513856.png)
 
 Lets submit our flag as the image text.
