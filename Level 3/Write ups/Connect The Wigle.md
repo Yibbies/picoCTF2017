@@ -27,7 +27,13 @@ Navigate to the browse data tab to view table data. Not much to look at in the a
 
 We're told to see if we can visualise any data. In this situation, the best contenders would be the latitude and longitude of the data sets. As it turns out the coordinates in both tables are exactly the same (unsurprising since the tables are now assumed linked). So now we just need a way to visualise coordinates.
 
-Google again provides us the solution: https://www.darrinward.com/lat-long/. We copy all the coordinate information and plot them using the website tool. We're given a bunch of markers that don't look like much. Lets zoom in. 
+Google again provides us the solution: https://www.darrinward.com/lat-long/. We copy all the coordinate information and plot them using the website tool. We're given a bunch of markers that don't look like much:
+
+![](../../resources/4fc78be2b1761ecc785ee900f66ccc6d.png)
+ 
+ Lets zoom in.
+ 
+ ![](../../resources/903745a9f42868f123c0b674c1dafa06.png) 
 
 As we zoom in, the markers begin to look like characters. Interpreting the markers gives us our flag:
 

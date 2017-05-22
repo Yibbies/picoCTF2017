@@ -5,7 +5,7 @@
 >
 >Bugs typically happen in groups. If you find one, what does it allow you to do?
 
-Connecting to the address and port presents us with a card game. Simple enough, make a bet if you win, increase your winnings, if you lose, lose the amount of your bet.
+Connecting to the address and port presents us with a card game. Simple enough, make a bet if you win; increase your winnings, if you lose; forfeit the amount of your bet.
 
 However, playing the game is another matter. After a couple of tries it appears the game is rigged against us: we always run out of cards before the opponent (assuming we haven't run out of money first).
 
@@ -14,7 +14,7 @@ So lets see if we can learn something from the source code.
 ```c
 ...
 
-#define NAMEBUFFLEN 32								// (1)
+#define NAMEBUFFLEN 32	//our buffer size for name
 #define BETBUFFLEN 8
 
 ...
@@ -22,8 +22,8 @@ So lets see if we can learn something from the source code.
 typedef struct _gameState{
   int playerMoney;
   player ctfer;
-  char name[NAMEBUFFLEN];							// (2)
-  size_t deckSize;								// (3)
+  char name[NAMEBUFFLEN];
+  size_t deckSize;	//deckSize is situated right after name in memory
   player opponent;
 } gameState;
 
@@ -39,25 +39,25 @@ int main(int argc, char**argv){
     gameData.playerMoney = 100;
     int bet;
 
-    buildDecks(&gameData.ctfer, &gameData.opponent);				// (4)
-    srand(time(NULL));//Not intended to be cryptographically strong
-
+    buildDecks(&gameData.ctfer, &gameData.opponent);	//deck is initialised here
     ...
     
-    memset(gameData.name,0,NAMEBUFFLEN);					// (5)
+    memset(gameData.name,0,NAMEBUFFLEN);	//name is initialised here
     if(!readInput(gameData.name,NAMEBUFFLEN)){
         printf("Read error. Exiting.\n");
         exit(-1);
     }
 ```
     
-So it turns out this program does no input checking at all, this includes boundary checks as well. We know that:
- 
- - (1), (2) - - - our name can be a maximum of 32 characters
- - (3) - - - the deck size variable follows right after the name variable
- - (4), (5) - - - that our card deck is created before setting our name
+So it turns out this program does very input checking at all, and it does not at all check boundaries. 
 
-With this information we can overflow the name buffer and manipulate our deck to give us better odds at defeating our opponent. Lets go with 32 * 'a'. 
+So we know that:
+ 
+ - our name can be a maximum of 32 characters. (1), (2)
+ - the deck size variable follows right after the name variable. (3)
+ - that our card deck is created before setting our name. (4), (5)
+
+With this information we can overflow the name buffer to manipulate our deckSize. Lets go with 32 * 'a'. 
 
 ```bash
 nc shell2017.picoctf.com 4415
