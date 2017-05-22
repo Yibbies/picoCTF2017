@@ -14,7 +14,7 @@ So lets see if we can learn something from the source code.
 ```c
 ...
 
-#define NAMEBUFFLEN 32						            // (1)
+#define NAMEBUFFLEN 32								// (1)
 #define BETBUFFLEN 8
 
 ...
@@ -22,8 +22,8 @@ So lets see if we can learn something from the source code.
 typedef struct _gameState{
   int playerMoney;
   player ctfer;
-  char name[NAMEBUFFLEN]; 					            // (2)
-  size_t deckSize;							            // (3)
+  char name[NAMEBUFFLEN];								// (2)
+  size_t deckSize;								// (3)
   player opponent;
 } gameState;
 
@@ -39,12 +39,12 @@ int main(int argc, char**argv){
     gameData.playerMoney = 100;
     int bet;
 
-    buildDecks(&gameData.ctfer, &gameData.opponent);   // (4)
+    buildDecks(&gameData.ctfer, &gameData.opponent);				// (4)
     srand(time(NULL));//Not intended to be cryptographically strong
 
     ...
     
-    memset(gameData.name,0,NAMEBUFFLEN);               // (5)
+    memset(gameData.name,0,NAMEBUFFLEN);				// (5)
     if(!readInput(gameData.name,NAMEBUFFLEN)){
         printf("Read error. Exiting.\n");
         exit(-1);
