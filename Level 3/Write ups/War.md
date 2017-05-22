@@ -22,7 +22,7 @@ So lets see if we can learn something from the source code.
 typedef struct _gameState{
   int playerMoney;
   player ctfer;
-  char name[NAMEBUFFLEN];								// (2)
+  char name[NAMEBUFFLEN];							// (2)
   size_t deckSize;								// (3)
   player opponent;
 } gameState;
@@ -44,7 +44,7 @@ int main(int argc, char**argv){
 
     ...
     
-    memset(gameData.name,0,NAMEBUFFLEN);				// (5)
+    memset(gameData.name,0,NAMEBUFFLEN);					// (5)
     if(!readInput(gameData.name,NAMEBUFFLEN)){
         printf("Read error. Exiting.\n");
         exit(-1);
