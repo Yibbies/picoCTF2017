@@ -19,12 +19,12 @@ Lets mark them and filter by their respective HTTP streams. We'll start with hDA
 ```
 tcp.stream eq 99
 ```
-So what we'r interested in is the data that makes up the PNG image. Unfortunetely it's fragmented. We can use the command line to do the brute work for us:
+So what we'r interested in is the data that makes up the PNG image. Unfortunately it's fragmented. We can use the tshark command line to do the brute work for us:
 
 ```bash
 tshark -r Puzzlingly\ Accountable.pcap -Y "tcp.stream eq 99" -Tfields -e data > puzzle1
 ```
-Since we know there are two images to download we will first collect the first set of data and store it in "puzzle1". Lets see what we have:
+Since we know there are two images to download, we will first collect the first set of data and store it in "puzzle1". Let's see what we have:
 
 ```
 file puzzle1
@@ -35,7 +35,7 @@ So our hexadecimal data for a PNG image is read as ASCII...reading the file reve
 ```
 cat puzzle1
 ```
-The output from the cat query shows us that the file contains nothing but numbers and a lot of new line operators (`\n`). The output from tshark is in raw form. We can also conveniently see that the first few numbers reflect the interpreted hexadecimal values of a PNG image header. Now we need to deal with the new line operators by removing them:
+The output from the cat query shows us that the file contains nothing but numbers (we have exported the results in raw form) and a lot of new line operators (`\n`). Conveniently, we see that the first few numbers reflect the interpreted hexadecimal values of a PNG image header. Now we need to deal with the new line operators by removing them:
 
 ```bash
  cat puzzle1 | tr -d '\n' > puzzle1_2
